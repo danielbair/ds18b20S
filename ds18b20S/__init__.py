@@ -14,7 +14,7 @@ class DsbS():
             os.system('modprobe w1-gpio')
             os.system('modprobe w1-therm')
 
-    def getSensorIds(slef):
+    def getSensorIds(self):
         return [i.split("/")[5] for i in glob.glob("/sys/bus/w1/devices/28-0*/w1_slave")]
 
     def getTemps(self, Ttype="C"):
